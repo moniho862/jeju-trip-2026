@@ -24,7 +24,11 @@ h1{font-size:clamp(44px,8vw,86px);line-height:1.06;margin:19px 0 12px;letter-spa
 .stat,.info{background:#fff;border:1px solid var(--line);border-radius:15px;padding:15px 18px}
 .stat small{display:block;color:var(--orange);font-weight:750}
 .stat strong{font-size:15px}
-section{margin-top:45px}
+section{margin-top:32px}
+.view-tabs{display:flex;gap:8px;margin-top:28px;padding:5px;border-radius:14px;background:#e8eee4}
+.view-tabs a{flex:1;text-align:center;padding:9px 3px;border-radius:9px;text-decoration:none;font-weight:750;font-size:clamp(13px,2.7vw,16px)}
+.view-tabs a[aria-current="true"]{background:var(--deep);color:#fff}
+.sources-section{margin-top:28px}
 h2{font-size:clamp(25px,4vw,34px);margin:0 0 6px;letter-spacing:-.025em}
 .section-note{margin:0 0 17px;color:var(--muted);font-size:14px}
 .day-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0 0 16px}
@@ -59,7 +63,7 @@ footer a{color:#fff}
 .day-tabs{gap:6px}.day-tab{display:block;padding:7px 8px}.day-tab strong{display:block;font-size:17px}.day-tab small,.day-tab span{display:block}.day-tab span{font-size:11px}
 .day-head{padding:18px}.timeline li{grid-template-columns:1fr;gap:3px;padding:9px 12px}.grid{grid-template-columns:1fr}
 }
-@media print{.hero{background:none;color:#222;padding:0}.eyebrow{color:#333}.day[hidden]{display:block}.actions,.day-tabs,footer,.checks{display:none}.stats{margin-top:0}.timeline li{break-inside:avoid}.day-head{background:none;color:#222;padding:4px 0}.day-head span,.day-head p{color:#333}}
+@media print{.hero{background:none;color:#222;padding:0}.eyebrow{color:#333}.day[hidden],.view[hidden]{display:block}.view-tabs,.day-tabs,footer{display:none}.stats{margin-top:0}.timeline li{break-inside:avoid}.day-head{background:none;color:#222;padding:4px 0}.day-head span,.day-head p{color:#333}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
@@ -68,17 +72,20 @@ footer a{color:#fff}
 <div class="eyebrow">JEJU ISLAND · 2026.12.11–12.14</div>
 <h1>濟州島冬日旅行</h1>
 <p>四人・四天三夜・住翰林</p>
-<div class="actions"><a href="#itinerary">查看每日時間表</a><a href="#essentials">航班與住宿</a></div>
+
 </div></header>
 <main class="wrap">
 <div class="stats"><div class="stat"><small>去程 LJ942</small><strong>02:45 桃園 → 06:05 濟州</strong></div><div class="stat"><small>回程 LJ941</small><strong>22:15 濟州 → 23:45 桃園</strong></div><div class="stat"><small>住宿・翰林 3 晚</small><strong>12/11 16:00 起入住 · 12/14 12:00 前退房</strong></div></div>
-<section id="itinerary">
+<nav class="view-tabs" aria-label="旅行資訊分頁">
+<a href="#itinerary">每日行程</a><a href="#essentials">航班與住宿</a><a href="#preparation">行前準備</a>
+</nav>
+<section class="view" id="itinerary">
 <h2>每日行程</h2>
 <p class="section-note">島上行程使用韓國時間（比台灣快 1 小時）。以四人租車估算，車程含彈性，當天以 Naver Map 路況為準。餐廳可直接點店名對應的地圖，出發前再看店休與臨時公告。</p>
 <nav class="day-tabs" aria-label="選擇日期"><a href="#day-1" class="day-tab" data-day="1"><strong>12/11</strong><small>週五</small><span>西海岸</span></a><a href="#day-2" class="day-tab" data-day="2"><strong>12/12</strong><small>週六</small><span>9.81 PARK・西南</span></a><a href="#day-3" class="day-tab" data-day="3"><strong>12/13</strong><small>週日</small><span>濟州東線</span></a><a href="#day-4" class="day-tab" data-day="4"><strong>12/14</strong><small>週一</small><span>濟州市區</span></a></nav>
 <div><article class="day" id="day-1"><header class="day-head"><span>12/11（五） · 西海岸</span><h3>從涯月慢慢開到翰林</h3><p>紅眼班機落地後先吃早餐、休息，再看海。</p></header><aside>如果沒睡好，跳過涯月步道或午餐後提早休息。16:00 前要寄放行李，先向飯店確認。</aside><ol class="timeline"><li><div class="clock">06:05–07:40</div><div><h4>抵達濟州國際機場</h4><p>入境、領行李，再依訂單搭租車接駁。</p><a class="map" href="https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li><li><div class="clock">07:40–09:00</div><div><h4>租車取車</h4><p>安排可在早上 9 點前交車的方案。租車商尚未選定，以訂單上的接駁與取車地址為準。</p></div></li><li><div class="clock">09:15–10:00</div><div><h4>金喜善濟州馬尾藻湯</h4><p>早餐吃濟州傳統馬尾藻豬骨湯（몸국）。地址：제주시 어영길 45-6。</p><a class="map" href="https://map.naver.com/p/search/%EA%B9%80%ED%9D%AC%EC%84%A0%20%EC%A0%9C%EC%A3%BC%20%EB%AA%B8%EA%B5%AD%20%EC%96%B4%EC%98%81%EA%B8%B8%2045-6" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li><li><div class="clock">10:45–11:35</div><div><h4>涯月・漢潭海岸散步路</h4><p>從早餐店開往涯月，留約 45 分鐘含停車。沿著玄武岩海岸散步，風大就縮短。</p><a class="map" href="https://map.naver.com/p/search/%ED%95%9C%EB%8B%B4%ED%95%B4%EC%95%88%EC%82%B0%EC%B1%85%EB%A1%9C" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li><li><div class="clock">11:45–13:00</div><div><h4>Nolman 海鮮拉麵</h4><p>漢潭步道附近吃海鮮拉麵。地址：제주시 애월읍 애월로1길 24。</p><a class="map" href="https://map.naver.com/p/search/%EB%86%80%EB%A7%A8%20%EC%95%A0%EC%9B%94%EB%A1%9C1%EA%B8%B8%2024" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li><li><div class="clock">13:40–14:30</div><div><h4>挾才海水浴場</h4><p>涯月開往挾才約 30–40 分鐘，看飛揚島、拍海岸照。</p><a class="map" href="https://map.naver.com/p/search/%ED%98%91%EC%9E%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li><li><div class="clock">14:30–15:45</div><div><h4>Comma Café 쉼표</h4><p>挾才海邊喝咖啡、看飛揚島。地址：제주시 한림읍 협재리 1732。</p><a class="map" href="https://map.naver.com/p/search/%EC%89%BC%ED%91%9C%EC%B9%B4%ED%8E%98%20%ED%98%91%EC%9E%AC%EB%A6%AC%201732" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li><li><div class="clock">16:00–17:30</div><div><h4>阿吉拉酒店入住</h4><p>到翰林飯店辦理入住，回房休息。</p><a class="map" href="https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%20%EC%A0%9C%EC%A3%BC%EC%8B%9C%20%ED%95%9C%EB%A6%BC%EC%9D%8D%20%EC%98%B9%ED%8F%AC2%EA%B8%B8%2010" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li><li><div class="clock">18:00–19:30</div><div><h4>잉겅 翰林挾才黑豬肉</h4><p>四人分食濟州黑豬肉、帶骨豬排。地址：제주시 한림읍 한림로 333。</p><a class="map" href="https://map.naver.com/p/search/%EC%9E%89%EA%B2%85%20%ED%95%9C%EB%A6%BC%ED%98%91%EC%9E%AC%ED%9D%91%EB%8F%BC%EC%A7%80%20%ED%95%9C%EB%A6%BC%EB%A1%9C%20333" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li></ol></article><article class="day" id="day-2"><header class="day-head"><span>12/12（六） · 9.81 PARK・西南</span><h3>重力賽車、茶園與山茶花</h3><p>睡飽再去涯月玩賽車，下午走西南部，晚餐到西歸浦市場。</p></header><aside>先確認四人的 RACE 981 場次、票種和乘坐限制。戶外賽道若因天候暫停，可改玩園區室內設施。天地淵瀑布列為機動加站。</aside><ol class="timeline"><li><div class="clock">08:45–09:50</div><div><h4>阿吉拉酒店出發去涯月</h4><p>早餐可前晚先備好，在房內吃完再出發。這段預留車程、停車與報到。</p><a class="map" href="https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%20%EC%A0%9C%EC%A3%BC%EC%8B%9C%20%ED%95%9C%EB%A6%BC%EC%9D%8D%20%EC%98%B9%ED%8F%AC2%EA%B8%B8%2010" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li><li><div class="clock">10:00–12:00</div><div><h4>9.81 PARK 濟州・RACE 981 重力賽車</h4><p>預留兩小時給四人報到、排隊和體驗。此為預排時段，冬季營運與場次以樂園公告為準。</p><a class="map" href="https://map.naver.com/p/search/9.81%ED%8C%8C%ED%81%AC%20%EC%A0%9C%EC%A3%BC" target="_blank" rel="noopener noreferrer">Naver Map ↗</a> <a class="map" href="https://981park.com/PARK" target="_blank" rel="noopener noreferrer">9.81 PARK 官網・查場次 ↗</a></div></li><li><div class="clock">12:00–12:50</div><div><h4>Broccollege 브로콜리지</h4><p>就在 9.81 PARK 園區內用午餐，吃完再開往茶博物館。地址：제주시 애월읍 천덕로 880-24。</p><a class="map" href="https://map.naver.com/p/search/9.81%ED%8C%8C%ED%81%AC%20%EC%A0%9C%EC%A3%BC%20%EC%B2%9C%EB%8D%95%EB%A1%9C%20880-24" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li><li><div class="clock">13:20–14:20</div><div><h4>O’Sulloc 茶博物館</h4><p>逛茶館、喝抹茶、看茶田。</p><a class="map" href="https://map.naver.com/p/search/%EC%98%A4%EC%84%A4%EB%A1%9D%20%ED%8B%B0%EB%AE%A4%EC%A7%80%EC%97%84" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li><li><div class="clock">14:45–16:00</div><div><h4>山茶花之丘</h4><p>走冬季山茶花步道，花況視當週而定。</p><a class="map" href="https://map.naver.com/p/search/%EC%B9%B4%EB%A9%9C%EB%A6%AC%EC%95%84%ED%9E%90" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li><li><div class="clock">16:45–17:30</div><div><h4>天地淵瀑布（選去）</h4><p>若賽車或花園停留較久，直接前往市場。</p><a class="map" href="https://map.naver.com/p/search/%EC%B2%9C%EC%A7%80%EC%97%B0%ED%8F%AD%ED%8F%AC" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li><li><div class="clock">17:45–19:00</div><div><h4>西歸浦每日偶來市場</h4><p>市場指定停靠：中央通닭（중앙통닭），點蒜味炸雞，四人分食。地址：서귀포시 중앙로48번길 14-1。</p><a class="map" href="https://map.naver.com/p/search/%EC%84%9C%EA%B7%80%ED%8F%AC%EB%A7%A4%EC%9D%BC%EC%98%AC%EB%A0%88%EC%8B%9C%EC%9E%A5" target="_blank" rel="noopener noreferrer">Naver Map ↗</a> <a class="map" href="https://map.naver.com/p/search/%EC%84%9C%EA%B7%80%ED%8F%AC%20%EC%A4%91%EC%95%99%ED%86%B5%EB%8B%AD%20%EC%A4%91%EC%95%99%EB%A1%9C48%EB%B2%88%EA%B8%B8%2014-1" target="_blank" rel="noopener noreferrer">中央通닭・Naver Map ↗</a></div></li><li><div class="clock">20:15 左右</div><div><h4>回翰林飯店</h4><p>西歸浦 → 翰林估約 60–75 分鐘，視路況調整。</p><a class="map" href="https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%20%EC%A0%9C%EC%A3%BC%EC%8B%9C%20%ED%95%9C%EB%A6%BC%EC%9D%8D%20%EC%98%B9%ED%8F%AC2%EA%B8%B8%2010" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li></ol></article><article class="day" id="day-3"><header class="day-head"><span>12/13（日） · 濟州東線</span><h3>城山日出峰與涉地可支</h3><p>東線離飯店最遠，早上出發，下午提早回程。</p></header><aside>遇強風、大雨或步道管制，可改 Aqua Planet Jeju。東線車程長，先查即時路況，也可以只走日出峰山腳。<div class="backup"><a class="map" href="https://map.naver.com/p/search/%EC%95%84%EC%BF%A0%EC%95%84%ED%94%8C%EB%9D%BC%EB%84%B7%20%EC%A0%9C%EC%A3%BC" target="_blank" rel="noopener noreferrer">雨天備案・Aqua Planet Jeju ↗</a></div></aside><ol class="timeline"><li><div class="clock">08:00–09:55</div><div><h4>飯店出發・往城山</h4><p>單程預留約 1 小時 45 分至 2 小時，含停車緩衝。</p><a class="map" href="https://map.naver.com/p/search/%EC%84%B1%EC%82%B0%EC%9D%BC%EC%B6%9C%EB%B4%89" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li><li><div class="clock">10:00–11:35</div><div><h4>城山日出峰</h4><p>想爬再走付費登頂路線，想輕鬆就留在下方海岸觀景。</p><a class="map" href="https://map.naver.com/p/search/%EC%84%B1%EC%82%B0%EC%9D%BC%EC%B6%9C%EB%B4%89" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li><li><div class="clock">11:45–12:50</div><div><h4>吾照海女之家 오조해녀의집</h4><p>午餐吃鮑魚粥。地址：서귀포시 성산읍 한도로 141-13。</p><a class="map" href="https://map.naver.com/p/search/%EC%98%A4%EC%A1%B0%ED%95%B4%EB%85%80%EC%9D%98%EC%A7%91%20%ED%95%9C%EB%8F%84%EB%A1%9C%20141-13" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li><li><div class="clock">13:10–14:15</div><div><h4>涉地可支</h4><p>城山一帶開車約 15–25 分鐘，走海岬步道，風大縮短停留。</p><a class="map" href="https://map.naver.com/p/search/%EC%84%AD%EC%A7%80%EC%BD%94%EC%A7%80" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li><li><div class="clock">14:40–15:20</div><div><h4>Café The Light 카페더라이트</h4><p>喝咖啡、看城山海景，再開回翰林。地址：서귀포시 성산읍 한도로 269。</p><a class="map" href="https://map.naver.com/p/search/%EC%B9%B4%ED%8E%98%EB%8D%94%EB%9D%BC%EC%9D%B4%ED%8A%B8%20%ED%95%9C%EB%8F%84%EB%A1%9C%20269" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li><li><div class="clock">15:20–17:20</div><div><h4>開回翰林</h4><p>跨島回程預留約兩小時。</p><a class="map" href="https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%20%EC%A0%9C%EC%A3%BC%EC%8B%9C%20%ED%95%9C%EB%A6%BC%EC%9D%8D%20%EC%98%B9%ED%8F%AC2%EA%B8%B8%2010" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li><li><div class="clock">18:00–19:30</div><div><h4>挾才海女之家 협재해녀의집</h4><p>四人可分食辣燉帶魚或海鮮拼盤。地址：제주시 한림읍 협재3길 19。</p><a class="map" href="https://map.naver.com/p/search/%ED%98%91%EC%9E%AC%ED%95%B4%EB%85%80%EC%9D%98%EC%A7%91%20%ED%98%91%EC%9E%AC3%EA%B8%B8%2019" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li></ol></article><article class="day" id="day-4"><header class="day-head"><span>12/14（一） · 濟州市區</span><h3>買伴手禮，晚班機回台</h3><p>退房後一路往機場方向走，晚餐後還車。</p></header><aside>若市區塞車或排隊，先跳過觀德亭。以 19:15 抵達航廈為目標，還車地點與末班接駁時間先向業者確認。</aside><ol class="timeline"><li><div class="clock">09:00–10:00</div><div><h4>阿吉拉酒店整理行李・退房</h4><p>飯店最晚 12:00 退房，預計 10:00 帶行李離開。</p><a class="map" href="https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%20%EC%A0%9C%EC%A3%BC%EC%8B%9C%20%ED%95%9C%EB%A6%BC%EC%9D%8D%20%EC%98%B9%ED%8F%AC2%EA%B8%B8%2010" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li><li><div class="clock">10:10–11:10</div><div><h4>翰林公園・挾才窟</h4><p>從飯店出發先去翰林公園，優先走挾才窟與附近園區。</p><a class="map" href="https://map.naver.com/p/search/%ED%95%9C%EB%A6%BC%EA%B3%B5%EC%9B%90%20%ED%95%9C%EB%A6%BC%EB%A1%9C%20300" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li><li><div class="clock">12:10–13:20</div><div><h4>姊妹麵條 자매국수</h4><p>午餐吃豬肉湯麵（고기국수），可加點白切豬肉。地址：제주시 항골남길 46。</p><a class="map" href="https://map.naver.com/p/search/%EC%9E%90%EB%A7%A4%EA%B5%AD%EC%88%98%20%ED%95%AD%EA%B3%A8%EB%82%A8%EA%B8%B8%2046" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li><li><div class="clock">13:40–14:20</div><div><h4>龍頭岩</h4><p>停留拍照、走海岸。</p><a class="map" href="https://map.naver.com/p/search/%EC%9A%A9%EB%91%90%EC%95%94" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li><li><div class="clock">14:40–15:40</div><div><h4>東門傳統市場・珍娥年糕店</h4><p>先到市場內的 진아떡집 買濟州小米紅豆糕（오메기떡）。市場地址：제주시 동문로 16。</p><a class="map" href="https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%EB%8F%99%EB%AC%B8%EC%8B%9C%EC%9E%A5%20%EB%8F%99%EB%AC%B8%EB%A1%9C%2016" target="_blank" rel="noopener noreferrer">Naver Map ↗</a> <a class="map" href="https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%20%EB%8F%99%EB%AC%B8%EC%8B%9C%EC%9E%A5%20%EC%A7%84%EC%95%84%EB%96%A1%EC%A7%91" target="_blank" rel="noopener noreferrer">珍娥年糕店・Naver Map ↗</a></div></li><li><div class="clock">15:45–16:15</div><div><h4>觀德亭 관덕정</h4><p>從東門市場步行到濟州舊城的觀德亭。</p><a class="map" href="https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%20%EA%B4%80%EB%8D%95%EC%A0%95" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li><li><div class="clock">16:45–17:45</div><div><h4>豬香氣 돈향기</h4><p>在黑豬肉一條街吃烤肉，吃完加油還車。地址：제주시 관덕로15길 30。</p><a class="map" href="https://map.naver.com/p/search/%EB%8F%88%ED%96%A5%EA%B8%B0%20%EA%B4%80%EB%8D%95%EB%A1%9C15%EA%B8%B8%2030" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li><li><div class="clock">18:00–19:15</div><div><h4>加油・還車・接駁</h4><p>依租車公司的還車點安排，加油、驗車、接駁都算進去。</p></div></li><li><div class="clock">19:15–22:15</div><div><h4>抵達濟州機場・報到</h4><p>預留約三小時辦理託運、安檢及出境。</p><a class="map" href="https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li><li><div class="clock">22:15 → 23:45</div><div><h4>LJ941 濟州飛桃園</h4><p>22:15 韓國時間起飛，23:45 台灣時間抵達。先安排桃園機場深夜返程。</p><a class="map" href="https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD" target="_blank" rel="noopener noreferrer">Naver Map ↗</a></div></li></ol></article></div>
 </section>
-<section id="essentials"><h2>航班與住宿</h2>
+<section class="view" id="essentials"><h2>航班與住宿</h2>
 <p class="section-note">依截圖上的班機與住宿選項規劃。航班、票價及住房以最終訂單為準。</p>
 <div class="grid"><div class="info"><h3>Jin Air 真航空</h3>
 <p><strong>12/10（四）23:45</strong> 建議抵達桃園機場，準備搭隔天凌晨的班機。</p>
@@ -92,7 +99,7 @@ footer a{color:#fff}
 <p>4 位成人・3 晚。早到可先詢問行李寄放，冬季泳池開放情況請向飯店確認。</p>
 <a class="map" href="https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%20%EC%A0%9C%EC%A3%BC%EC%8B%9C%20%ED%95%9C%EB%A6%BC%EC%9D%8D%20%EC%98%B9%ED%8F%AC2%EA%B8%B8%2010" target="_blank" rel="noopener noreferrer">飯店地址・Naver Map ↗</a>
 </div></div></section>
-<section class="checks"><h2>出發前確認</h2>
+<section class="view checks" id="preparation"><h2>行前準備</h2><p class="section-note">勾選狀態會保存在目前使用的瀏覽器。</p>
 <div class="info">
 <label><input type="checkbox" id="booking"><span>確認航班訂位、桃園航廈及飯店訂單</span></label>
 <label><input type="checkbox" id="rental"><span>確認租車證件、取還車時間、接駁與行李空間</span></label>
@@ -100,38 +107,47 @@ footer a{color:#fff}
 <label><input type="checkbox" id="race"><span>確認 9.81 PARK 冬季營業、四人票種與賽車場次</span></label>
 <label><input type="checkbox" id="weather"><span>出發前查冬季天氣、景點當日營業與步道開放狀況</span></label>
 </div>
-</section>
-<section class="sources-section"><h2>景點官網資訊</h2><div class="sources">
+<div class="sources-section"><h3>景點官網資訊</h3><div class="sources">
 <a class="map" href="https://www.visitjeju.net/kr/detail/view?contentsid=CNTS_300000000013216" target="_blank" rel="noopener noreferrer">翰林挾才黑豬肉 ↗</a> <a class="map" href="https://english.visitkorea.or.kr/svc/whereToGo/hdrdslt/hdrdsltView.do?crsSn=227" target="_blank" rel="noopener noreferrer">西北海岸 ↗</a> <a class="map" href="https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?menuSn=351&amp;vcontsId=56949" target="_blank" rel="noopener noreferrer">茶博物館 ↗</a> <a class="map" href="https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=83520" target="_blank" rel="noopener noreferrer">山茶花之丘 ↗</a> <a class="map" href="https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?menuSn=351&amp;vcontsId=110731" target="_blank" rel="noopener noreferrer">城山日出峰 ↗</a> <a class="map" href="https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=70407" target="_blank" rel="noopener noreferrer">Aqua Planet ↗</a> <a class="map" href="https://www.visitjeju.net/en/detail/view?contentsid=CNTS_300000000014093" target="_blank" rel="noopener noreferrer">市場與瀑布 ↗</a>
-</div></section>
+</div></div></section>
 </main>
 <footer><div class="wrap">濟州島冬日旅行 · 封面照片 <a href="https://creatrip.com/it/blog/15076" target="_blank" rel="noopener noreferrer">Creatrip</a></div></footer>
 <script>
-const tabs = [...document.querySelectorAll('.day-tab')];
+const dayTabs = [...document.querySelectorAll('.day-tab')];
 const days = [...document.querySelectorAll('.day')];
+const viewTabs = [...document.querySelectorAll('.view-tabs a')];
+const views = [...document.querySelectorAll('.view')];
+let selectedDay = '#day-1';
 
-function selectDay() {
-  const selected = days.find(day => '#' + day.id === location.hash) || days[0];
-  for (const day of days) day.hidden = day !== selected;
+function showSelection(tabs, panels, hash) {
+  for (const panel of panels) panel.hidden = '#' + panel.id !== hash;
   for (const tab of tabs) {
-    if (tab.hash === '#' + selected.id) tab.setAttribute('aria-current', 'true');
+    if (tab.hash === hash) tab.setAttribute('aria-current', 'true');
     else tab.removeAttribute('aria-current');
   }
 }
 
-for (const tab of tabs) {
+function render() {
+  const hash = location.hash;
+  if (days.some(day => '#' + day.id === hash)) selectedDay = hash;
+  const view = views.some(panel => '#' + panel.id === hash) ? hash : '#itinerary';
+  showSelection(viewTabs, views, view);
+  showSelection(dayTabs, days, selectedDay);
+}
+
+for (const tab of [...dayTabs, ...viewTabs]) {
   tab.addEventListener('click', event => {
     if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
-    if (location.hash !== tab.hash) history.pushState(null, '', tab.hash);
-    selectDay();
-    document.getElementById(tab.hash.slice(1)).scrollIntoView();
+    const hash = tab.hash === '#itinerary' ? selectedDay : tab.hash;
+    if (location.hash !== hash) history.pushState(null, '', hash);
+    render();
   });
 }
 
-window.addEventListener('hashchange', selectDay);
-window.addEventListener('popstate', selectDay);
-selectDay();
+window.addEventListener('hashchange', render);
+window.addEventListener('popstate', render);
+render();
 
 for (const input of document.querySelectorAll('.checks input')) {
   try {
